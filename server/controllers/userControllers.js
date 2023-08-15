@@ -6,10 +6,6 @@ const jwt = require("jsonwebtoken");
 
 const isLoggedIn = asyncErrorHandler(async (req, res, next) => {
   const { todoJWTToken } = req.cookies;
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://mern-todo-app-server-i91ju3nuy-jimiddu.vercel.app"
-  );
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
