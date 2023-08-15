@@ -14,6 +14,7 @@ app.use(
   cors({
     origin: "https://mern-todo-app-server-blond.vercel.app",
     credentials: true,
+    methods: ["POST", "GET", "PUT", "DELETE"],
   })
 );
 app.use(express.json());
