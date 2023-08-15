@@ -1,0 +1,42 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vmax;
+}
+
+.title {
+    margin: 3vmax 0;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 2vmax;
+    width: 100vmax;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    min-width: 35vmax;
+}
+
+.inputPassword{
+    width: 100vmax;
+}
+
+.button {
+    min-width: 35vmax;
+}
+
+.password{
+    width: 100vmax;
+}
+
+.loading{
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+}

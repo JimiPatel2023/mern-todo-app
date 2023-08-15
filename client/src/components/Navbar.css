@@ -1,0 +1,46 @@
+.navbar {
+    width: 100vmax;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vmax 2vmax;
+    background-color: var(--surface-ground	);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3vmax;
+}  
+
+
+.navbar h1 {
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 3vmax;
+}
+
+@media screen and (max-width:1100px) {
+    .navbar h1 {
+        font-size: 4vmax;
+    }
+}
+@media screen and (max-width:780px) {
+    .navbar h1 {
+        font-size: 5.4vmax;
+    }
+}
+
+/* @media screen and (max-width:550px) {
+    .navbar h1{
+        display: none;
+    }
+    .navbar{
+        justify-content: center;
+    }
+} */
