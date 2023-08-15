@@ -11,14 +11,10 @@ const cors = require("cors");
 connectDatabase();
 const app = express();
 app.use(
-<<<<<<< HEAD
   cors({
     origin: "https://mern-todo-app-server-blond.vercel.app",
     credentials: true,
   })
-=======
-  cors({origin: "https://mern-todo-app-server-blond.vercel.app", credentials: true,})
->>>>>>> cf22e4f69a154f5e71f1228e1388b8471b0a81a9
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
