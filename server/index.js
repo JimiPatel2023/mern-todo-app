@@ -11,7 +11,7 @@ const cors = require("cors");
 connectDatabase();
 const app = express();
 app.use(
-  cors()
+  cors({origin: "https://mern-todo-app-server-e9s0xiq1w-jimiddu.vercel.app"})
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
