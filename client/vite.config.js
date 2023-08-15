@@ -9,4 +9,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      "/api/v1": {
+        target: "https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app",
+        secure: false,
+        changeOrigin: true,
+      },
+    },
+  },
 });
