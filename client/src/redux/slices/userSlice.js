@@ -5,12 +5,16 @@ import { clearTodos } from "./todoSlice";
 
 export const loginUser = createAsyncThunk("loginUser", async (data) => {
   try {
-    const res = await axios.post("http://localhost:5000/api/v1/login", data, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      withCredentials: true,
-    });
+    const res = await axios.post(
+      "https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/login",
+      data,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
     return res.data;
   } catch (error) {
     return error.response.data.message;
@@ -19,12 +23,15 @@ export const loginUser = createAsyncThunk("loginUser", async (data) => {
 
 export const logoutUser = createAsyncThunk("logout", async (dispatch) => {
   try {
-    const res = await axios.get("http://localhost:5000/api/v1/logout", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      withCredentials: true,
-    });
+    const res = await axios.get(
+      "https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/logout",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
     dispatch(clearTodos());
     return {
       success: true,
@@ -39,7 +46,7 @@ export const logoutUser = createAsyncThunk("logout", async (dispatch) => {
 export const registerUser = createAsyncThunk("registerUser", async (data) => {
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/v1/register",
+      "https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/register",
       data,
       {
         headers: {
@@ -56,9 +63,12 @@ export const registerUser = createAsyncThunk("registerUser", async (data) => {
 
 export const verifyUser = createAsyncThunk("verifyUser", async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/v1/verify", {
-      withCredentials: true,
-    });
+    const res = await axios.get(
+      "https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/verify",
+      {
+        withCredentials: true,
+      }
+    );
     const data = await res.data;
     return data;
   } catch (error) {

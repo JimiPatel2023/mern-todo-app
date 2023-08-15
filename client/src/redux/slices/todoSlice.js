@@ -3,12 +3,15 @@ import axios from "axios";
 
 export const getTodos = createAsyncThunk("getTodos", async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/v1/todos", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      withCredentials: true,
-    });
+    const res = await axios.get(
+      "https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/todos",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
     return res.data;
   } catch (error) {
     return error.response.data.message;
@@ -19,12 +22,16 @@ export const createTodo = createAsyncThunk(
   "createTodo",
   async ({ data, todos, navigate }) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/v1/new", data, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-      });
+      const res = await axios.post(
+        "https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/new",
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
       const newTodos = [res.data.todo, ...todos];
       return {
         newTodos,
@@ -41,7 +48,7 @@ export const deleteTodo = createAsyncThunk(
   async ({ id, todos }) => {
     try {
       const res = await axios.delete(
-        `http://localhost:5000/api/v1/todo/${id}`,
+        `https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/todo/${id}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -66,7 +73,7 @@ export const updateTodo = createAsyncThunk(
   async ({ id, data, todos, navigate }) => {
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/v1/todo/${id}`,
+        `https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/todo/${id}`,
         data,
         {
           headers: {
