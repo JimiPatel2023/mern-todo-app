@@ -3,7 +3,7 @@ const storeTokenInCookie = (user, res, statusCode) => {
   res
     .status(statusCode)
     .cookie("todoJWTToken", token, {
-      httpOnly: true,
+      httpOnly: false,
       expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
       sameSite: "none",
     })
