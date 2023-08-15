@@ -2,27 +2,28 @@ const User = require("../models/user");
 const asyncErrorHandler = require("../utils/asyncErrorHandler");
 const CustomErrorHandler = require("../utils/customErrorHandler");
 const storeTokenInCookie = require("../utils/storeTokenInCookie");
-const jwt = require('jsonwebtoken')
+const jwt = require("jsonwebtoken");
 
-const isLoggedIn = asyncErrorHandler( async (req, res, next) => {
+const isLoggedIn = asyncErrorHandler(async (req, res, next) => {
   const { todoJWTToken } = req.cookies;
+  res.setHeader("Access-Control-Allow-Origin", "*");
   if (!todoJWTToken) {
     return res.status(200).json({
-      verification:false
-    })
+      verification: false,
+    });
   }
   const payload = jwt.verify(todoJWTToken, process.env.JWT_SECRET);
   const user = await User.findById(payload._id);
   if (!user) {
     return res.status(200).json({
-      verification:false
-    })
+      verification: false,
+    });
   }
   res.status(200).json({
-    verification:true,
-    user
-  })
-})
+    verification: true,
+    user,
+  });
+});
 
 const registerUser = asyncErrorHandler(async (req, res, next) => {
   const { name, email, password } = req.body;
@@ -129,5 +130,5 @@ module.exports = {
   deleteUser,
   loginUser,
   logoutUser,
-  isLoggedIn
+  isLoggedIn,
 };
