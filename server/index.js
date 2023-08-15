@@ -12,7 +12,7 @@ connectDatabase();
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:4000",
+    origin: "https://mern-todo-app-server-blond.vercel.app",
     credentials: true,
   })
 );
