@@ -10,6 +10,7 @@ const cors = require("cors");
 
 connectDatabase();
 const app = express();
+app.use(cookieParser());
 app.use(
   cors({
     origin: "https://mern-todo-app-server-blond.vercel.app",
@@ -18,7 +19,6 @@ app.use(
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 
 app.get("/", (req, res) => {
   res.send("API is running");
