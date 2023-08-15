@@ -67,7 +67,6 @@ export const verifyUser = createAsyncThunk("verifyUser", async () => {
       "https://mern-todo-app-backend-three.vercel.app/api/v1/verify",
       {
         withCredentials: true,
-        credentials: "include",
       }
     );
     const data = await res.data;
