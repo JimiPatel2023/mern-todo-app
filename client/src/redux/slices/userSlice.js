@@ -6,7 +6,7 @@ import { clearTodos } from "./todoSlice";
 export const loginUser = createAsyncThunk("loginUser", async (data) => {
   try {
     const res = await axios.post(
-      "https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/login",
+      "https://mern-todo-app-backend-three.vercel.app/api/v1/login",
       data,
       {
         headers: {
@@ -24,7 +24,7 @@ export const loginUser = createAsyncThunk("loginUser", async (data) => {
 export const logoutUser = createAsyncThunk("logout", async (dispatch) => {
   try {
     const res = await axios.get(
-      "https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/logout",
+      "https://mern-todo-app-backend-three.vercel.app/api/v1/logout",
       {
         headers: {
           "Content-Type": "application/json",
@@ -46,7 +46,7 @@ export const logoutUser = createAsyncThunk("logout", async (dispatch) => {
 export const registerUser = createAsyncThunk("registerUser", async (data) => {
   try {
     const res = await axios.post(
-      "https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/register",
+      "https://mern-todo-app-backend-three.vercel.app/api/v1/register",
       data,
       {
         headers: {
@@ -64,7 +64,7 @@ export const registerUser = createAsyncThunk("registerUser", async (data) => {
 export const verifyUser = createAsyncThunk("verifyUser", async () => {
   try {
     const res = await axios.get(
-      "https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/verify",
+      "https://mern-todo-app-backend-three.vercel.app/api/v1/verify",
       {
         withCredentials: true,
       }

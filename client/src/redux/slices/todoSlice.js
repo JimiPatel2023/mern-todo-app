@@ -4,7 +4,7 @@ import axios from "axios";
 export const getTodos = createAsyncThunk("getTodos", async () => {
   try {
     const res = await axios.get(
-      "https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/todos",
+      "https://mern-todo-app-backend-three.vercel.app/api/v1/todos",
       {
         headers: {
           "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export const createTodo = createAsyncThunk(
   async ({ data, todos, navigate }) => {
     try {
       const res = await axios.post(
-        "https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/new",
+        "https://mern-todo-app-backend-three.vercel.app/api/v1/new",
         data,
         {
           headers: {
@@ -48,7 +48,7 @@ export const deleteTodo = createAsyncThunk(
   async ({ id, todos }) => {
     try {
       const res = await axios.delete(
-        `https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/todo/${id}`,
+        `https://mern-todo-app-backend-three.vercel.app/api/v1/todo/${id}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -73,7 +73,7 @@ export const updateTodo = createAsyncThunk(
   async ({ id, data, todos, navigate }) => {
     try {
       const res = await axios.put(
-        `https://mern-todo-app-backend-r6ygmjzaa-jimiddu.vercel.app/api/v1/todo/${id}`,
+        `https://mern-todo-app-backend-three.vercel.app/api/v1/todo/${id}`,
         data,
         {
           headers: {
