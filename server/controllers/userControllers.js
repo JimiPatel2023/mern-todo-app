@@ -6,10 +6,6 @@ const jwt = require("jsonwebtoken");
 
 const isLoggedIn = asyncErrorHandler(async (req, res, next) => {
   const { todoJWTToken } = req.cookies;
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
   if (!todoJWTToken) {
     return res.status(200).json({
       verification: false,
