@@ -12,7 +12,7 @@ connectDatabase();
 const app = express();
 app.use(
   cors({
-    origin: "https://mern-todo-app-server-e9s0xiq1w-jimiddu.vercel.app",
+    origin: ["https://mern-todo-app-server-e9s0xiq1w-jimiddu.vercel.app"],
     credentials: true,
     methods: ["POST", "GET", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"],
